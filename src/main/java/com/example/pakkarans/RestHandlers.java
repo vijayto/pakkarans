@@ -13,5 +13,9 @@ public class RestHandlers<T> {
 
     }
 
+    public T getRequest(String url) throws MalformedURLException {
+        return (T) RestAssured.given().get(new URL(url)).andReturn().getBody().asString();
+
+    }
 
 }
